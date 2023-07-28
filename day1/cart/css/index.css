@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*公共样式*/
+.go {
+    position: absolute;
+    z-index: 1001;
+    right: 35px;
+    top: 45px;
+
+}
+
+.more {
+    position: absolute;
+    z-index: 1001;
+    bottom: 85px;
+    right: 60px;
+    animation: more 0.5s linear infinite alternate;
+}
+
+/*公共样式动画*/
+@keyframes more {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/*内容样式*/
+.content {
+    width: 900px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, .3);
+    bottom: 0;
+    left: 50%;
+    margin-left: -450px;
+    position: absolute;
+}
+
+/*第一屏*/
+.screen01 {
+    background: url("../images/01-bg.png") no-repeat center bottom;
+}
+
+.screen01 .content .goods {
+    position: absolute;
+    left: 30px;
+    bottom: 100px;
+
+}
+
+.screen01 .content .sofa {
+    position: absolute;
+    left: 230px;
+    bottom: 330px;
+    animation: sofa01 0.8s linear infinite alternate;
+
+}
+
+.screen01 .content .fly {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    animation: fly01 1s linear infinite alternate;
+}
+
+/*第一屏动画*/
+/*横幅动画*/
+@keyframes fly01 {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+
+}
+
+/*沙发动画*/
+@keyframes sofa01 {
+    0% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(15px);
+    }
+}
+
+/*第二屏样式*/
+.screen02 {
+    background: url("../images/02-bg.png") no-repeat center bottom;
+}
+
+.screen02 .content .goods {
+    position: absolute;
+    top: 180px;
+    left: 225px;
+    opacity: 0;
+}
+
+
+.screen02 .content .search .input {
+    /*最终的状态*/
+    position: absolute;
+    left: 505px;
+    top: 120px;
+    transform: scale(0.7);
+    transform-origin: right top;
+    /*opacity: 0;*/
+    /*animation: input02 3s linear forwards;*/
+    /*right: 334px;*/
+    /*top: 250px;*/
+
+
+}
+.screen02 .content .search .key {
+    /*最终的状态*/
+    position: absolute;
+    /*opacity: 1;*/
+    left: 445px;
+    top: 255px;
+    /*opacity: 0;*/
+}
+
+.screen02 .content .text{
+    text-align: center;
+}
+.screen02 .content .text .text2{
+    opacity:0;
+    opacity:0;
+    position: fixed;
+}
+
+.screen02.now .input {
+    /*最终的状态*/
+    /*position: absolute;*/
+    /*left: 505px;*/
+    /*top: 120px;*/
+    /*transform: scale(0.7);*/
+    /*transform-origin: right top;*/
+    /*opacity: 0;*/
+    animation: input02 3s linear forwards;
+    /*right: 334px;*/
+    /*top: 250px;*/
+}
+
+.screen02 .now .content .search .key {
+    /*最终的状态*/
+    position: absolute;
+    opacity: 1;
+    left: 630px;
+    top: 118px;
+    transition: all 1s linear 1s;
+    /*animation: key02 1s linear 1s forwards;*/
+}
+
+
+/*第二屏动画*/
+@keyframes input02{
+    0%{
+        transform: translate(1200px,250px);
+    }
+    33.3%{
+        transform: translate(334px,250px);
+    }
+    66.7%{
+        transform: translate(334px,250px);
+    }
+    100%{
+         transform: translate(505px,120px) scale(0.7);
+    }
+}
+
+@keyframes key02 {
+    0% {
+        transform: translate(445px,255px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(630px,118px) scale(0.7);
+
+    }
+
+}
