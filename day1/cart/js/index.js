@@ -24,11 +24,11 @@ $(function () {
             $(".more").on('click',function () {
                 $.fn.fullpage.moveSectionDown();
             });
-            $(".screen04 .content .cart").on('transitionend',function () {
-                console.log("xxx");
+            $(".screen04 .content .sofa").on('transitionend',function () {
+                $(".screen04 .content .text").addClass("show");
                 $(".screen04 .content .address").addClass("show");
 
-            })
+            });
         },
         scrollingSpeed:1000
     });

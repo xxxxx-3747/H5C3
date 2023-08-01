@@ -323,30 +323,63 @@
     top: 200px;
     z-index: 1003;
 }
-.screen04 .content .cloud{
+
+/*.screen04 .content .text {*/
+/*    display: none;*/
+/*}*/
+.screen04 .content .cloud {
     position: absolute;
     top: -66px;
     left: -666px;
 }
-.screen04 .content .address {
-    display: none;
+
+/*.screen04 .content .address {*/
+/*    opacity: 0;*/
+/*}*/
+
+.screen04 .content .text .text01 {
+    position: absolute;
+    display: block;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
 }
+
+.screen04 .content .text .text02 {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+}
+
 .screen04 .content .address01 {
     position: absolute;
     top: 170px;
     left: 50%;
     transform: translate(-50%);
+    opacity: 0;
 }
+
 .screen04 .content .address02 {
     position: absolute;
     top: 230px;
     left: 50%;
     transform: translate(-50%);
+    opacity: 0;
 }
-.screen04 .content .address.show {
-    display: block;
+
+.screen04 .content .address.show .address01{
+    opacity: 1;
+    transition: all 1s linear 0.5s;
 }
-.screen04.now .content .cloud{
+
+.screen04 .content .address.show .address02 {
+    opacity: 1;
+    transition: all 0.5s linear 1s;
+}
+
+.screen04.now .content .cloud {
     animation: cloud04 20s linear infinite alternate;
 }
 
@@ -355,40 +388,141 @@
     transform: translateX(2000px) rotate(30deg);
     transition: transform 3s linear 1s;
 }
+
 .screen04.now .content .cart {
     animation: cart04 3s linear 1s forwards;
 }
-.screen04.now .content .text .text01{
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translate(-50%);
+
+.screen04 .content .text.show .text01 {
+    display: none;
 }
-.screen04.now .content .text .text02{
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translate(-50%);
-    opacity: 0;
+
+.screen04 .content .text.show .text02 {
+    opacity: 1;
+    transition: all 1s linear;
 }
 
 /*第四屏动画*/
-@keyframes cloud04{
-    from{
+@keyframes cloud04 {
+    from {
 
     }
-    to{
+    to {
         transform: translateX(1333px);
     }
 }
+
 @keyframes cart04 {
-    from{
+    from {
 
     }
     to {
         transform: translateX(2000px);
     }
-    
+
 }
+
+/*第五屏样式*/
+.screen05 {
+    background: url("../images/05-bg.png");
+}
+
+.screen05 .content {
+    height: 100%;
+    overflow: hidden;
+}
+
+.screen05 .content .text {
+    position: absolute;
+    top: 100px;
+
+}
+.screen05 .content .card {
+    position: absolute;
+    top: 280px;
+}
+.screen05 .content .card .cardImg{
+    position: absolute;
+    z-index: 1001;
+}
+.screen05 .content .card .order {
+    position: absolute;
+    /*最终位置*/
+    /*top: -80px;*/
+    /*left: 150px;*/
+    /*opacity: 0;*/
+    /*开始位置*/
+    top: 10px;
+    left: 150px;
+}
+
+.screen05 .content .card .sofa{
+    position: absolute;
+    /*z-index: 1003;*/
+    /*最终位置*/
+    /*top: 150px;*/
+    /*left: 90px;*/
+    /*中间位置*/
+    /*top: 30px;*/
+    left: 90px;
+    transform: rotate(30deg);
+    transform: translateY(1000px);
+
+}
+
+.screen05 .content .mouse {
+    position: absolute;
+    top: -340px;
+    right: 0;
+}
+.screen05 .content .mouse .mouse01 {
+    position: absolute;
+
+}
+.screen05 .content .hand {
+    position: absolute;
+    right: 50px;
+    top: 350px;
+    transform: translateY(800px);
+    z-index: 1001;
+}
+.screen05.now .content .hand {
+    transform: none;
+    transition: all 1s linear;
+}
+.screen05.now .content .mouse01 {
+    opacity: 0;
+    transition: all 0.5s linear 1s;
+}
+.screen05.now .content .card .order {
+    transform: translateY(-100px);
+    transition: all 1s linear 2s;
+}
+
+.screen05.now .content .card .sofa {
+    animation: sofa05 2s linear 1.5s forwards;
+}
+
+@keyframes sofa05 {
+    from {
+        transform: translateY(-800px) rotate(30deg);
+    }
+    50%{
+        transform: translateY(30px) rotate(30deg);
+    }
+    to {
+        transform: translateY(150px) rotate(30deg);
+    }
+}
+
+/*第六屏样式*/
+.screen06{
+    background: url("../images/06-bg.png") no-repeat 25% bottom;
+}
+.screen06 .content .cloud {
+    position: absolute;
+    top: -100px;
+}
+
 
 
