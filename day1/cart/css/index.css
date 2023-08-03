@@ -717,8 +717,8 @@
 
 .screen06 .content .door {
     position: absolute;
-    right: -65px;
-    bottom: 112px;
+    right: -33px;
+    bottom: 113px;
     opacity: 0;
 }
 .screen06.now .content .door{
@@ -774,6 +774,82 @@
 /*第七屏样式*/
 .screen07 {
     background: url("../images/07-bg.png") center bottom no-repeat;
+}
+.screen07 .content .star {
+    position: absolute;
+    left: 152px;
+    top: 142px;
+    /*opacity: 0;*/
+}
+.screen07 .content .star img {
+    float: left;
+    margin-left: 6px;
+    opacity: 0;
+}
+.screen07.now .content .star img {
+    animation: star07 2.5s ease-in-out forwards;
+}
+@keyframes star07 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+.screen07 .content .text {
+    position: absolute;
+    left: 152px;
+    top: 180px;
+    transform: scale(0);
+    transform-origin: left bottom;
+}
+.screen07.now .content .text {
+    animation: text07 1s linear  0.5s forwards;
+
+}
+
+@keyframes text07 {
+    from{
+
+    }
+    50%{
+       transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+/*第八屏样式*/
+.screen08 {
+    background: url("../images/08-bg.png");
+}
+.screen08 .content .btn{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.screen08 .content .btn .btn01{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+
+}
+.screen08 .content .btn .btn01:hover{
+    opacity: 0;
+}
+.screen08 .content .again {
+    position: absolute;
+    top: 70px;
+    right: 0px;
+}
+.screen08 .content .hand {
+    position: absolute;
 }
 
 

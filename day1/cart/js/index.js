@@ -15,12 +15,17 @@ $(function () {
                 $('.section').eq(index.index).addClass('leaved');
             }else if(index.index == 2 && nextIndex.index == 3){
                 $('.section').eq(index.index).addClass('leaved');
-            }else if(index.index == 4 && nextIndex.index == 5){
+            }else if(index.index == 4 && nextIndex.index == 5) {
                 $('.screen05 .content').eq(index.index).addClass('leaved');
                 $('.section').eq(index.index).addClass('leaved');
                 $('.screen06 .content .box').addClass('show');
-
             }
+
+            // }else if(index.index == 5 && nextIndex.index == 6){
+            //     $('.screen07 .content .star img').each(function (i,item) {
+            //         $(this).css("transition-delay",i*0.5+'s');
+            //     });
+            // }
 
 
         },
@@ -34,7 +39,28 @@ $(function () {
                 $(".screen04 .content .address").addClass("show");
 
             });
+            // 第八屏样式设置
+            $(".screen08 .content .again").on('click',function () {
+                $(".section").removeClass('show');
+                $(".section").removeClass('now');
+                $(".section").removeClass('leaved');
+
+                //清除所有的样式
+                // $(".section").removeAttr('style');
+                $.fn.fullpage.moveTo(1);
+            });
+            // 第八屏--手跟着鼠标动
+            $(".screen08 .content .hand").on('mousemove',function (e) {
+                console.log(e);
+                $(this).css({
+                    left:(e.clientX-160)+"px",
+                    top:(e.clientY-50)+"px"
+                });
+               // $(this).css.left=scrollX;
+               // $(this).css.top=scrollY;
+            });
         },
+
         scrollingSpeed:1000
     });
 });
