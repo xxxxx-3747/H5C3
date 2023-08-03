@@ -15,6 +15,11 @@ $(function () {
                 $('.section').eq(index.index).addClass('leaved');
             }else if(index.index == 2 && nextIndex.index == 3){
                 $('.section').eq(index.index).addClass('leaved');
+            }else if(index.index == 4 && nextIndex.index == 5){
+                $('.screen05 .content').eq(index.index).addClass('leaved');
+                $('.section').eq(index.index).addClass('leaved');
+                $('.screen06 .content .box').addClass('show');
+
             }
 
 

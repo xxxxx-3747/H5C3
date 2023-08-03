@@ -369,7 +369,7 @@
     opacity: 0;
 }
 
-.screen04 .content .address.show .address01{
+.screen04 .content .address.show .address01 {
     opacity: 1;
     transition: all 1s linear 0.5s;
 }
@@ -429,7 +429,6 @@
 
 .screen05 .content {
     height: 100%;
-    overflow: hidden;
 }
 
 .screen05 .content .text {
@@ -437,14 +436,17 @@
     top: 100px;
 
 }
+
 .screen05 .content .card {
     position: absolute;
     top: 280px;
 }
-.screen05 .content .card .cardImg{
+
+.screen05 .content .card .cardImg {
     position: absolute;
     z-index: 1001;
 }
+
 .screen05 .content .card .order {
     position: absolute;
     /*最终位置*/
@@ -456,7 +458,7 @@
     left: 150px;
 }
 
-.screen05 .content .card .sofa{
+.screen05 .content .card .sofa {
     position: absolute;
     /*z-index: 1003;*/
     /*最终位置*/
@@ -472,42 +474,87 @@
 
 .screen05 .content .mouse {
     position: absolute;
-    top: -340px;
+    top: 0px;
     right: 0;
+    height: 100%;
+    width: 400px;
+    overflow: hidden;
+    /*z-index: -1;*/
 }
+
+.screen05 .content .mouse .mouse01,
+.screen05 .content .mouse .mouse02 {
+    position: absolute;
+    right: 0;
+    bottom: 230px;
+}
+
 .screen05 .content .mouse .mouse01 {
     position: absolute;
-
+    opacity: 1;
 }
+
+.screen05 .content .mouse .mouse02 {
+    position: absolute;
+    opacity: 0;
+}
+
 .screen05 .content .hand {
     position: absolute;
     right: 50px;
-    top: 350px;
+    bottom: 0;
     transform: translateY(800px);
-    z-index: 1001;
+    z-index: 0;
 }
+
 .screen05.now .content .hand {
     transform: none;
     transition: all 1s linear;
+    z-index: 1001;
+
+    overflow: hidden;
 }
+
 .screen05.now .content .mouse01 {
     opacity: 0;
     transition: all 0.5s linear 1s;
 }
+
+.screen05.now .content .mouse02 {
+    opacity: 1;
+    transition: all 0.5s linear 1s;
+}
+
 .screen05.now .content .card .order {
     transform: translateY(-100px);
     transition: all 1s linear 2s;
 }
 
-.screen05.now .content .card .sofa {
-    animation: sofa05 2s linear 1.5s forwards;
+.screen05.now.leaved .content .card .sofa {
+    z-index: 1003;
+    animation: sofa05-2 1s linear forwards;
+}
+
+@keyframes sofa05-2 {
+    from {
+        opacity: 1;
+        transform: rotate(30deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(320px) scale(0.4) rotate(30deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(640px) scale(0.2) rotate(30deg);
+    }
 }
 
 @keyframes sofa05 {
     from {
         transform: translateY(-800px) rotate(30deg);
     }
-    50%{
+    50% {
         transform: translateY(30px) rotate(30deg);
     }
     to {
@@ -515,14 +562,226 @@
     }
 }
 
+.screen05.now .content .card .sofa {
+    animation: sofa05 2s linear 1.5s forwards;
+}
+
 /*第六屏样式*/
-.screen06{
+.screen06 {
     background: url("../images/06-bg.png") no-repeat 25% bottom;
+}
+
+.screen06.now {
+    background: url("../images/06-bg.png") no-repeat 100% bottom;
+    transition: all 1s linear 1s;
 }
 .screen06 .content .cloud {
     position: absolute;
-    top: -100px;
+    top: -70px;
 }
+
+.screen06 .content .cloud .cloud01 {
+    position: absolute;
+    left: -200px;
+}
+
+.screen06 .content .cloud .cloud02 {
+    position: absolute;
+    left: 50px;
+}
+
+.screen06.now .content .cloud .cloud01 {
+    animation: cloud06 20s linear infinite alternate;
+}
+
+.screen06.now .content .cloud .cloud02 {
+    animation: cloud06-2 20s linear infinite alternate;
+}
+
+
+@keyframes cloud06 {
+    from {
+    }
+    to {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes cloud06-2 {
+    from {
+    }
+    to {
+        transform: translateX(-500px);
+    }
+}
+
+.screen06 .content .box {
+    position: absolute;
+    /*最终位置*/
+    left: 130px;
+    top: 100px;
+    transform: translateX(-800px);
+}
+
+.screen06 .content .box.show {
+    animation: box06 2s linear forwards;
+
+}
+
+@keyframes box06 {
+    from {
+
+    }
+    50% {
+        transform: none;
+    }
+    to {
+        transform: translateY(360px) scale(0.3);
+    }
+}
+
+.screen06 .content .car {
+    position: absolute;
+    bottom: 0;
+    left: 130px;
+}
+
+.screen06 .content .address {
+    position: absolute;
+    bottom: 170px;
+    left: 300px;
+}
+
+.screen06 .content .address .buyer {
+    position: absolute;
+    opacity: 0;
+}
+
+.screen06 .content .address .addressImg {
+    position: absolute;
+    opacity: 0;
+}
+
+.screen06.now .content .address .buyer {
+    opacity: 1;
+    transition: opacity 0.3s linear 1.2s;
+}
+
+.screen06.now .content .address .addressImg {
+    opacity: 1;
+    transition: opacity 0.5s linear 1.5s;
+}
+
+.screen06 .content .worker {
+    position: absolute;
+    /*left: 330px;*/
+    /*bottom: 100px;*/
+    transform-origin: left bottom;
+    transform: scale(0);
+    bottom: 0;
+    left: 130px;
+}
+
+.screen06 .content .say {
+    position: absolute;
+    left: 480px;
+    bottom: 360px;
+    opacity: 0;
+}
+
+.screen06.now .content .worker {
+    /*transform: scale(1);*/
+    /*transition: all 1s linear 2s;*/
+    animation: worker06 2s linear 2s forwards;
+}
+
+@keyframes worker06 {
+    from {
+
+    }
+    33.3% {
+        transform: scale(1);
+    }
+    66.7% {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(-100px) translateX(200px);
+    }
+}
+
+.screen06.now .content .say {
+    opacity: 1;
+    transition: all 0.5s linear 4s;
+}
+
+.screen06 .content .door {
+    position: absolute;
+    right: -65px;
+    bottom: 112px;
+    opacity: 0;
+}
+.screen06.now .content .door{
+    opacity: 1;
+    transition: all 0.5s linear 5s;
+}
+.screen06 .content .person {
+    position: absolute;
+    bottom: 112px;
+    right: -65px;
+    transform: scale(0);
+    transform-origin: right bottom;
+}
+.screen06.now .content .person {
+    animation: person06 2s linear 5.5s forwards;
+}
+@keyframes person06 {
+    from{
+
+    }
+    50%{
+        transform: scale(1);
+    }
+    to{
+        transform: translateX(-240px) scale(1);
+    }
+}
+.screen06 .content .text{
+    position: absolute;
+    top: 80px;
+    left: 130px;
+}
+.screen06 .content .text .text01{
+    position: absolute;
+    /*top: 130px;*/
+    /*left: 50px;*/
+    opacity: 1;
+}
+.screen06 .content .text .text02{
+    position: absolute;
+    /*top: 130px;*/
+    /*left: 50px;*/
+    opacity: 0;
+}
+/*.screen06.now .content .text .text01{*/
+/*    opacity: 0;*/
+/*    transition: all 0.2s linear 4.5s;*/
+/*}*/
+.screen06.now .content .text .text02{
+     opacity: 1;
+     transition: all 0.5s linear 4.5s;
+ }
+/*第七屏样式*/
+.screen07 {
+    background: url("../images/07-bg.png") center bottom no-repeat;
+}
+
+
+
+
+
+
+
 
 
 
