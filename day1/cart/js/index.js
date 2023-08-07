@@ -44,17 +44,20 @@ $(function () {
                 $(".section").removeClass('show');
                 $(".section").removeClass('now');
                 $(".section").removeClass('leaved');
+                $(".section .content .address").removeClass('show');
+                $(".section .content .box").removeClass('show');
+
 
                 //清除所有的样式
                 // $(".section").removeAttr('style');
                 $.fn.fullpage.moveTo(1);
             });
             // 第八屏--手跟着鼠标动
-            $(".screen08 .content .hand").on('mousemove',function (e) {
+            $(".screen08 .content").on('mousemove',function (e) {
                 console.log(e);
-                $(this).css({
-                    left:(e.clientX-160)+"px",
-                    top:(e.clientY-50)+"px"
+                $(this).find(".hand").css({
+                    left:(e.pageX-350)+"px",
+                    top:(e.pageY-100)+"px"
                 });
                // $(this).css.left=scrollX;
                // $(this).css.top=scrollY;
