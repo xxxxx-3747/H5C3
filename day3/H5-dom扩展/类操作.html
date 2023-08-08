@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background-color: green;
+            float: left;
+            cursor: pointer;
+        }
+
+        li.active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单1</li>
+    <li class="active blue">菜单2</li>
+    <li>菜单3</li>
+    <li>菜单4</li>
+</ul>
+<button>切换类</button>
+
+<!--<script src="js/jquery-3.7.0.js"></script>-->
+<!--<script src="js/jquery-3.7.0.min.js"></script>-->
+
+<script>
+    var liObj = document.querySelector("li:nth-child(2)");
+
+    //获取类
+    console.log(liObj.classList);
+    //操作类
+    // 添加类
+    liObj.classList.add("red");
+    console.log(liObj.classList);
+
+    // 删除类
+    liObj.classList.remove("blue");
+    console.log(liObj.classList);
+
+    //切换类
+    document.querySelector("button").onclick = function (e) {
+        liObj.classList.toggle("red");
+        console.log(liObj.classList.contains("red"));
+    }
+
+
+</script>
+
+<script>
+    window.onload = function () {
+        console.log("xxx");
+        document.querySelector("ul").onclick = function (e) {
+            // 获取当前的li
+            var currentli = e.target;
+            console.log(currentli);
+
+            // 如果已经添加样式，停止程序
+            if(currentli.classList.contains("active")){
+                return false;
+            }
+
+            // 旧的去除样式
+            document.querySelector("li.active").classList.remove("active");
+
+            // 新的添加样式
+            currentli.classList.add("active");
+        };
+    };
+
+</script>
+
+</body>
+</html>
