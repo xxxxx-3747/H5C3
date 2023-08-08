@@ -78,6 +78,7 @@ a {
     position: absolute;
     right: 0;
 }
+
 /*注册按钮*/
 .qq_nav .content .nav_right a {
     float: left;
@@ -105,10 +106,12 @@ a {
     text-shadow: 0 0 2px #333;
     /*margin-left: 50px;*/
 }
+
 .qq_nav .content .nav_right .other li:nth-child(2) {
     float: left;
     margin: 0 45px;
 }
+
 .qq_nav .content .nav_right span {
     float: right;
     display: block;
@@ -120,39 +123,285 @@ a {
 
 /*展示界面样式*/
 .qq_banner {
-    position: relative;
-    top: 0;
+    /*position: relative;*/
+    padding-top: 150px;
     height: 880px;
-    background: url("../images/banner-bg.jpg") no-repeat top center;
+    width: 100%;
+    background: url("../images/banner-bg.jpg") repeat-X top center;
 }
+
 .qq_banner .content {
-    width: 1080px;
+    /*width: 100%;*/
     /*height: 100%;*/
     /*margin: 0 auto;*/
     margin-left: 50%;
     transform: translateX(-50%);
     position: absolute;
+    padding-top: 20px;
 }
+
 .qq_banner .content .logo {
     position: absolute;
-    top: 170px;
+    /*top: 170px;*/
+    /*height: 220px;*/
     left: 50%;
     transform: translateX(-50%);
 }
-.qq_banner .content .download{
+
+.qq_banner .content .download {
     position: absolute;
-    top: 315px;
+    top: 165px;
     left: 50%;
     transform: translateX(-50%);
 }
-.qq_banner .content .list{
+
+.qq_banner .content .list {
     position: absolute;
-    top: 390px;
+    top: 235px;
     left: 50%;
     transform: translateX(-50%);
 }
+
 .qq_banner .product {
     width: 100%;
     position: absolute;
     top: 550px;
 }
+
+
+/*语音样式设置*/
+.qq_sound .bg {
+    height: 500px;
+    background: url("../images/sound-bg.jpg") no-repeat center/cover;
+
+}
+
+.qq_sound .QQ {
+    background: url("../images/sound-text.png") top center;
+    width: 100%;
+    height: 321px;
+    font-size: 0;
+    z-index: 2;
+}
+
+.qq_sound .bg {
+    width: 100%;
+}
+
+.qq_sound .content {
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    width: 980px;
+    height: 500px;
+    /*width: 1080px;*/
+    position: relative;
+    margin: 0 auto;
+}
+
+.qq_sound .content .phone {
+    width: 700px;
+    height: 700px;
+    /*float: left;*/
+    position: absolute;
+    top: -200px;
+    left: 0px;
+}
+
+.qq_sound .content .text {
+    float: right;
+    /*position: absolute;*/
+    padding-top: 100px;
+    top: 50px;
+    width: 500px;
+}
+
+.qq_sound .content .text h2 {
+    float: right;
+    font-size: 40px;
+    text-align: right;
+}
+
+.qq_sound .content .text span {
+    float: right;
+    text-align: right;
+    margin-top: 45px;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+/*文件的样式*/
+.qq_file {
+    /*background: url("../images/file-bg.jpg");*/
+}
+
+.qq_file .bg {
+    height: 500px;
+    background: url("../images/file-bg.jpg") no-repeat center/cover;
+
+}
+
+.qq_file .content {
+    width: 980px;
+    height: 500px;
+    /*width: 1080px;*/
+    position: relative;
+    margin: 0 auto;
+}
+
+.qq_file .content h2 {
+    /*float: right;*/
+    padding-top: 100px;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 45px;
+}
+
+.qq_file .content span {
+    padding-top: 100px;
+    /*float: right;*/
+    text-align: left;
+    margin-top: 45px;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+.qq_file .content .mac {
+    /*float: right;*/
+    position: absolute;
+    right: -50px;
+    top: 100px;
+}
+
+/*兴趣模块样式*/
+.qq_interest .bg {
+    height: 500px;
+    background: url("../images/interest-bg.jpg") no-repeat center/cover;
+}
+
+.qq_interest .content {
+    width: 980px;
+    height: 500px;
+    /*width: 1080px;*/
+    position: relative;
+    margin: 0 auto;
+}
+
+.qq_interest .content .phone {
+    float: left;
+    width: 350px;
+    height: 500px;
+}
+
+.qq_interest .content h2 {
+    /*float: right;*/
+    padding-top: 100px;
+    font-size: 40px;
+    text-align: right;
+    margin-bottom: 25px;
+    right: 0;
+    position: absolute;
+}
+
+.qq_interest .content span {
+    padding-top: 260px;
+    /*float: right;*/
+    text-align: left;
+    /*margin-top: 45px;*/
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+    /*float: right;*/
+    position: absolute;
+    right: 0;
+}
+
+/*底部样式*/
+.qq_footer {
+    height: 250px;
+    background: #2a2a2a;
+    padding-top: 50px;
+
+}
+
+.qq_footer .content {
+    width: 880px;
+    height: 150px;
+    /*background-color: #fff;*/
+    /*margin: 0 auto;*/
+    left: 50%;
+    transform: translateX(30%);
+    text-align: center;
+    /*padding-left: 10px;*/
+    /*padding-top: 50px;*/
+}
+
+.qq_footer .content a {
+    font-size: 12px;
+    color: #666;
+    width: 80px;
+    /*height: 100%;*/
+    margin: 0 50px;
+    background: url("../images/footer.png") no-repeat;
+    text-align: center;
+    padding-top: 50px;
+    float: left;
+    /*display: block;*/
+}
+
+.qq_footer .content a:last-child {
+    width: 150px;
+}
+
+.qq_footer .content a:nth-child(1) {
+    background-position: 0 0;
+
+    /*background: url("../images/footer.png") no-repeat 10px 0;*/
+}
+
+.qq_footer .content a:nth-child(2) {
+    background-position: -105px 0;
+
+    /*background: url("../images/footer.png") no-repeat 10px 0;*/
+}
+
+.qq_footer .content a:nth-child(3) {
+    background-position: -220px 0;
+
+    /*background: url("../images/footer.png") no-repeat 10px 0;*/
+}
+
+.qq_footer .content a:nth-child(4) {
+    background-position: -292px 0;
+
+    /*background: url("../images/footer.png") no-repeat 10px 0;*/
+}
+
+.qq_footer p {
+    font-size: 12px;
+    color: #666;
+    margin: 0 auto;
+    text-align: center;
+}
+/*鼠标经过a的时候的样式*/
+.qq_footer .content a:hover {
+    color: #12b7f5;
+}
+.qq_footer .content a:nth-child(1):hover{
+    background-position: 0 -93px;
+}
+.qq_footer .content a:nth-child(2):hover{
+    background-position: -105px -93px;
+}
+.qq_footer .content a:nth-child(3):hover{
+    background-position: -220px -93px;
+}
+.qq_footer .content a:nth-child(4):hover{
+    background-position: -292px -93px;
+}
+
+
+
+
+
+
+
+
