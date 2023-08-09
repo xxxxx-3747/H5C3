@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul:first-child li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background: green;
+            float: left;
+            cursor: pointer;
+        }
+        ul:first-child li.active {
+            background: red;
+        }
+        .box li {
+            width: 400px;
+            height: 400px;
+            background: pink;
+            display: none;
+        }
+        .box li.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li data-content-id="content1">菜单1</li>
+    <li data-content-id="content2" class="active">菜单2</li>
+    <li data-content-id="content3">菜单3</li>
+    <li data-content-id="content4">菜单4</li>
+</ul>
+<ul class="box">
+    <li id="content1">内容1</li>
+    <li id="content2" class="show">内容2</li>
+    <li id="content3">内容3</li>
+    <li id="content4">内容4</li>
+</ul>
+
+<script src="js/jquery-3.7.0.min.js"></script>
+
+<script>
+    window.onload = function () {
+        document.querySelector(".nav").onclick = function (e) {
+            //获取当前的li
+            var currentli = e.target;
+            // console.log(currentli);
+
+            //判断当前li中是否有类的选择
+            if (currentli.classList.contains("active")) {
+                return false;
+            }
+
+            //更改样式
+            //移除已有的class，给新的元素添加class
+            var old=document.querySelector(".nav li.active");
+            old.classList.remove("active");
+            currentli.classList.add("active");
+
+            //获取old的自定义属性
+            var oldId=old.dataset.contentId;
+            // console.log("#"+oldId);
+
+            //获取new的自定义属性
+            var newId=currentli.dataset.contentId;
+            // console.log(newId);
+
+            document.querySelector(".box li#"+oldId).classList.remove("show");
+            document.querySelector(".box li#"+newId).classList.add("show");
+
+
+
+        }
+    }
+</script>
+
+</body>
+</html>

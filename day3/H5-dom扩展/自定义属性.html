@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div data-user="cx" data-age="30">
+
+</div>
+
+<script src="js/jquery-3.7.0.min.js"></script>
+
+<script>
+    var div=document.querySelector("div");
+    // 获取所有的自定义属性
+    var classset=div.dataset;
+    console.log(classset);
+
+    // 获取单个自定义属性
+    console.log(classset.user);
+    console.log(classset.age);
+
+    // 设置单个自定义属性
+    classset.age="18";
+</script>
+
+</body>
+</html>

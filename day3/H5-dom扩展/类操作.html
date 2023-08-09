@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background: green;
+            float: left;
+            cursor: pointer;
+        }
+        li.active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单1</li>
+    <li class="active blue">菜单2</li>
+    <li>菜单3</li>
+    <li>菜单4</li>
+</ul>
+<script>
+    var liObj=document.querySelector("ul li:nth-child(2)");
+    //获取类
+    console.log(liObj.classList);
+
+    //添加类
+    liObj.classList.add("red");
+    console.log(liObj.classList);
+
+    // 删除类
+    liObj.classList.remove("blue");
+    console.log(liObj.classList);
+
+    //切换类
+    liObj.classList.toggle("red");
+    console.log(liObj.classList);
+
+    // 切换样式
+    // 获取当前的，并删除，给新加的添加类样式
+    window.onload=function () {
+        document.querySelector("ul").onclick=function (e) {
+            var current = e.target;
+
+            //判断当前的是否添加了类样式
+            if(current.classList.contains("active")){
+                return false;
+            }
+
+            document.querySelector("li.active").classList.remove("active");
+
+            current.classList.add("active");
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
