@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 560px;
+            height: 300px;
+            margin: 100px auto 0;
+            border: 1px solid #ccc ;
+            position: relative;
+        }
+        .imageBox{
+            list-style: none;
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+        }
+        .imageBox li {
+            position: relative;
+            /*width: 112px;*/
+            width: 112px;
+            height: 100%;
+            float: left;
+            /*设置3d效果*/
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        .imageBox li span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background: url("images/1.jpg") no-repeat;*/
+            background-repeat: no-repeat;
+
+        }
+
+        /*拼接背景*/
+        .imageBox li:nth-child(1) span{
+            background-position: 0 0;
+
+        }
+        .imageBox li:nth-child(2) span{
+            background-position: -112px 0;
+
+        }
+        .imageBox li:nth-child(3) span{
+            background-position: -224px 0;
+        }
+        .imageBox li:nth-child(4) span{
+            background-position: -336px 0;
+        }
+        .imageBox li:nth-child(5) span{
+            background-position: -448px 0;
+        }
+
+        /*拼接立体容器*/
+        .imageBox li span:nth-child(1){
+            background-image: url("images/1.jpg");
+            transform: translateZ(150px);
+        }
+        .imageBox li span:nth-child(2){
+            background-image: url("images/2.jpg");
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        .imageBox li span:nth-child(3){
+            background-image: url("images/3.jpg");
+            transform: rotateX(180deg) translateZ(150px);
+        }
+        .imageBox li span:nth-child(4){
+            background-image: url("images/4.jpg");
+            transform: rotateX(270deg) translateZ(150px);
+        }
+
+        a {
+            text-decoration: none;
+            margin: 0 auto;
+        }
+        .box .left,
+        .box .right {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: rgba(0,0,0,0.2);
+            top: 115px;
+            text-align: center;
+            line-height: 70px;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .box .right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="imageBox">
+<!--        <li><img src="images/1.jpg"></li>-->
+<!--        <li><img src="images/2.jpg"></li>-->
+<!--        <li><img src="images/3.jpg"></li>-->
+<!--        <li><img src="images/4.jpg"></li>-->
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+    </ul>
+    <a class="left" href="#">&lt;</a>
+    <a class="right" href="#">&gt;</a>
+</div>
+
+
+<script src="jquery.min.js"></script>
+<script>
+    $(function () {
+
+        //定义一个索引
+        var index=0;
+        //点击左侧按钮
+        $(".left").on("click",function () {
+            index--;
+            // console.log(index);
+            var angle = -index *90;
+            $("li").css("transform","rotateX("+angle+"deg)");
+            // console.log(angle);
+            // $("li").css("transform","rotateX("+angle+"deg)").each(function (i,item) {
+            //     console.log(i);
+            //     $("this").css("transition-delay",i*0.25+"s");
+            // });
+        });
+
+        //点击右侧按钮
+        $(".right").on("click",function () {
+            index++;
+            var angle = -index *90;
+            $("li").css("transform","rotateX("+angle+"deg)").each(function (i,item) {
+                $("this").css("transition-delay",i*0.25+"s");
+            });
+
+        });
+    });
+</script>
+
+</body>
+</html>
